@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css">
+    <link rel="icon" href="./images/logo 2.png">
+    <title>Cadastro</title>
+</head>
+<body id="bck">
+    <section class="bck">
+        <div class="container">
+        <img class="logo" src="./images/Energy Saving Bulb.svg" alt="">
+
+        <section class="formulario">
+            <h2>Cadastre-se</h2>
+            <form id="cadastroForm">
+            <div class="form-grid">
+                <div class="form-group">
+                    <div class="input-icon input-nome">
+                        <label for="nome">Nome</label>
+                        <input type="text" id="nome" placeholder="Digite seu nome">
+                        <img class="icon" src="./images/Customer.svg" alt="">
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <div class="input-icon input-sobrenome">
+                        <label for="sobrenome">Sobrenome</label>
+                        <input type="text" id="sobrenome" placeholder="Digite seu último nome">
+                        <img class="icon" src="./images/Ellipsis.svg" alt="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-icon input-email">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" placeholder="Digite seu e-mail">
+                        <img class="icon" src="./images/Letter.svg" alt="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-icon input-calendario">
+                        <label for="nascimento">Data de nascimento</label>
+                        <input type="text" id="dataNascimento" placeholder="00/00/00">
+                        <img class="icon" src="./images/Calendar.svg" alt="">
+                    </div>    
+                </div>
+
+                <div class="form-group">
+                    <div class="input-icon input-senha">
+                        <label for="senha">Senha</label>
+                        <input type="password" id="senha" placeholder="Digite a sua senha">
+                        <img class="icon" src="./images/Validation.svg" alt="">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <div class="input-icon input-conSenha">
+                        <label for="confirma-senha">Confirme sua senha</label>
+                        <input type="password" id="confirma-senha" placeholder="Confirme sua senha">
+                        <img class="icon" src="./images/Validation.svg" alt="">
+                    </div>
+                </div>
+
+                <button class="btn" type="submit">Confirmar</button>
+            </div>
+
+            </form>
+                <p class="login-link">Já tem uma conta? <a href="./home.html">Faça login</a></p>
+                <p id="mensagem"></p>
+            </div>
+        </section>
+    </section>
+    <script src="cadastro.js"></script>
+</body>
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="geralAdm.css">
+    <link rel="stylesheet" href="cadastroAdm.css">
+    <link rel="stylesheet" href="editarPonto.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="icon" href="./images/logo 2.png">
+    <title>Admin</title>
+</head>
+<body>
+
+    <div id="toast-container"></div>
+
+    <div id="toast-confirm" class="toast-confirm hidden">
+    <p id="toast-confirm-message"></p>
+    <div class="actions">
+        <button id="toast-confirm-yes">Sim</button>
+        <button id="toast-confirm-no">Cancelar</button>
+    </div>
+    </div>
+
+
+    <header class="header">
+            <div class="logo">
+                <img class="logoHome" src="./images/Energy Saving Bulb.svg" alt="">
+            </div>
+
+            <nav class="nav-menu">
+                <a href="#" id="linkHome">Geral</a>
+                <span>•</span>
+                <a href="#" id="linkPontos">Cadastrar Ponto</a>
+                <span>•</span>
+                <a href="#" id="linkDescarte">Pontos</a>
+                <span>•</span>
+                <a href="#" id="linkDescarte">Usuários</a>
+                <span>•</span>
+                <a href="#" id="linkRanking">Ranking</a>
+            </nav>
+            <img class="user-icon" src="./images/3d6f8d628c77876ee9e502e9d9a9592736bf92a7.png" alt="">
+            <!-- <p id="open-login" >Admin</p> -->
+            
+            <button id="logoutBtn">Logout</button>
+            
+           
+
+             <script>
+             const links = document.querySelectorAll('.nav-menu a');
+
+            links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Evita comportamento padrão (pular para o topo)
+                links.forEach(el => el.classList.remove('active')); // Remove de todos
+                this.classList.add('active'); // Adiciona ao clicado
+                });
+                });
+        </script>
+    </header>
+    
+    <section class="overview">
+        <h2>Visão Geral</h2>
+        <p>O sistema em tempo real</p>
+
+        <div class="separator"></div>
+
+        <div class="cards">
+
+        <div class="card">
+            <div class="icon bg-green">
+                <img src="./images/10dc640961a9102389fde16c68131cec4993ef5d.png" alt="">
+            </div>
+            <div class="text">
+                <h3 id="usuarios">120</h3>
+                <span>Total de Usuários</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="icon bg-green">
+                <img src="./images/8f070079aefcee202bae7462871cd10a5d19fff4.png" alt="">
+            </div>
+            <div class="text">
+                <h3 id="reciclado">3,450 kg</h3>
+                <span>Material Reciclado</span>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="icon bg-green">
+                <img src="./images/ca5ff29b8b395bc5caa24bcd819a56ed32f3fd5f.png" alt="">
+            </div>
+            <div class="text">
+                <h3 id="pontos">10</h3>
+                <span>Pontos de Coleta</span>
+            </div>
+        </div>
+
+        </div>
+    </section>
+    
+    <div class="separator1"></div>
+        
+    <section class="cadastroAdm">
+
+        <div class="header-line">
+            <div>
+                <h2>Cadastrar Ponto de Coleta</h2>
+                <p>Registre um novo ponto de coleta</p>
+            </div>
+
+            <button class="btn-criar" id="btnCriarPonto">Criar</button>
+
+        </div>
+
+        <div class="form-box">
+            <form>
+
+               <div class="form-group">
+    <label>Nome do ponto</label>
+    <input id="nomePonto" type="text" placeholder="Digite o nome do ponto">
+        </div>
+
+        <div class="form-group">
+            <label>Capacidade total</label>
+            <input id="capacidadeTotal" type="number" placeholder="Digite a capacidade total do ponto">
+        </div>
+
+        <div class="form-group">
+            <label>Endereço completo</label>
+            <input id="endereco" type="text" placeholder="Digite o endereço completo">
+        </div>
+
+        <div class="form-group">
+            <label>Status</label>
+            <select id="statusPonto" class="select-container">
+                <option>Ativo</option>
+                <option>Manutenção</option>
+            </select>
+        </div>
+
+
+            </form>
+        </div>
+
+    </section>
+
+    <div class="separator1"></div>
+
+    <section id="editarPonto">
+
+        <div class="top-area">
+            <h2>Pontos de Coleta</h2>
+            <p class="subtitle">Todos os pontos de coleta de material reciclável</p>
+        </div>
+        <div class="container">
+
+            
+            <div class="filter-area">
+                <p>Lista de Pontos</p>
+                <div class="search-box">
+                    <img src="./images/00ce40ab84de2aa070c8c8b9e30fd76bdfdac06b.png" width="20" />
+                    <input type="text" placeholder="Buscar ponto..." />
+                </div>
+
+                <div class="filters">
+                    <button class="active">Total</button>
+                    <button>Ativos</button>
+                    <button>Manutenção</button>
+                </div>
+            </div>
+
+            <table>
+                <tr>
+                    <th>Nome</th>
+                    <th>Endereço</th>
+                    <th>Status</th>
+                    <th>Capacidade</th>
+                    <th>Ação</th>
+                </tr>
+
+                <tr>
+                    <td>EcoPonto Central</td>
+                    <td>Rua das Flores, 123 – SP</td>
+                    <td>85%</td>
+                    <td>30 kg</td>
+                    <td class="acoes">
+                        <img src="./images/9d42ac21fb131d91686de1ff6ce15a1c6179ed1f.png" />
+                        <img src="./images/8936c67df27e5b4fc95fa08836a82c7d3a8f9333.png" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Hub Zona Leste</td>
+                    <td>Av. B, 900 – SP</td>
+                    <td>30%</td>
+                    <td>15 kg</td>
+                    <td class="acoes">
+                        <img src="./images/9d42ac21fb131d91686de1ff6ce15a1c6179ed1f.png" />
+                        <img src="./images/8936c67df27e5b4fc95fa08836a82c7d3a8f9333.png" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Ponto Verde Pinheiros</td>
+                    <td>Rua da Consolação, 789 – SP</td>
+                    <td>45%</td>
+                    <td>8 kg</td>
+                    <td class="acoes">
+                        <img src="./images/9d42ac21fb131d91686de1ff6ce15a1c6179ed1f.png" />
+                        <img src="./images/8936c67df27e5b4fc95fa08836a82c7d3a8f9333.png" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Recicla Mais Vila Madalena</td>
+                    <td>Av. Principal, 456 – SP</td>
+                    <td>65%</td>
+                    <td>23 kg</td>
+                    <td class="acoes">
+                        <img src="./images/9d42ac21fb131d91686de1ff6ce15a1c6179ed1f.png"  />
+                        <img src="./images/8936c67df27e5b4fc95fa08836a82c7d3a8f9333.png" />
+                    </td>
+                </tr>
+            </table>
+
+            <p class="pagination">
+                <span class="page-number active" data-page="1">1</span>
+                <span class="page-number" data-page="2">2</span>
+            </p>
+        </div>
+
+    </section>
+
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                © 2025 Recyclo Hub | Universidade São Judas Tadeu
+            </div>
+            <div class="footer-right">
+                <a href="#">Sobre</a> |
+                <a href="#">Contato</a> |
+                <a href="#">Política de Privacidade</a>
+            </div>
+        </div>
+    </footer>
+
+    
+    
+
+    <script src="geralAdm.js"></script>
+    <!-- <script src="cadastroAdm.js"></script> -->
+    <script src="editarPonto.js"></script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="modal.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="homePg.css">
+    <link rel="stylesheet" href="pontos.css">
+    <link rel="stylesheet" href="descarte.css">
+    <link rel="stylesheet" href="ranking.css">
+    <link rel="stylesheet" href="footer.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+    <link rel="icon" href="./images/logo 2.png">
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
+    <title>Recyclo Hub</title>
+</head>
+<body>
+
+    <section id="home">
+        
+        <header class="header">
+            <div class="logo">
+                <img class="logoHome" src="./images/Energy Saving Bulb.svg" alt="">
+            </div>
+
+            <nav class="nav-menu">
+                <a href="#" id="linkHome">Home</a>
+                <span>•</span>
+                <a href="#" id="linkPontos">Pontos</a>
+                <span>•</span>
+                <a href="#" id="linkDescarte">Descarte já!</a>
+                <span>•</span>
+                <a href="#" id="linkRanking">Ranking</a>
+            </nav>
+            <img class="user-icon" src="./images/3d6f8d628c77876ee9e502e9d9a9592736bf92a7.png" alt="">
+            <button id="open-login" >Login</button>
+            
+           
+            <button id="logoutBtn" style="display: none;">Logout</button>
+
+             <script>
+             const links = document.querySelectorAll('.nav-menu a');
+
+            links.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault(); // Evita comportamento padrão (pular para o topo)
+                links.forEach(el => el.classList.remove('active')); // Remove de todos
+                this.classList.add('active'); // Adiciona ao clicado
+                });
+                });
+        </script>
+        </header>
+
+        <section class="modal-wrapper">
+    
+            <!-- Modal -->
+            <div id="login-modal" class="modal">
+            <div class="modal-content">
+            <span class="close">&times;</span>
+            
+    
+            <div class="top-gradient">
+                <img class="logo" src="./images/Energy Saving Bulb.svg" alt="">
+            </div>
+    
+            <div class="form-area">
+                
+    
+            <form id="loginForm">
+                    
+                <label for="email">Email</label>
+                <div class="input-box">
+                    <img src="./images/Letter.svg" alt="">
+                    <input type="email" id="email" placeholder="Digite seu e-mail" required>
+                </div> 
+    
+                <div class="senha-area">
+                    <label for="senha">Senha</label>
+                    <a href="#" class="forgot">Esqueceu a senha?</a>
+                </div>
+                <div class="input-box">
+                    <img src="./images/Validation.svg" alt="">
+                    <input type="password" id="senha" placeholder="Digite a sua senha" required>
+                </div>
+    
+                <button type="submit">Entrar</button>
+            </form>
+            <p id="mensagem"></p>
+            <p class="register-text">Não tem conta? <a href="cadastro.html">Registre-se</a></p>
+            </div>
+            </div>
+            </div>
+        </section>
+
+        <section id="homePg">
+            <div class="homePg">
+                <img class="background-blur" src="./images/01.png" alt="">
+            
+                <main class="container">
+                    <h1>Bem-vindo ao Ponto de </h1> 
+                    <h1> Coleta <span>Recyclo Hub</span></h1>
+                    <p class="subtitle">
+                    Registre seu descarte para ajudar o meio ambiente<br />
+                    e subir no ranking!
+                    </p>
+
+                    <div class="divider"></div>
+
+                    <div class="cards">
+                    <div class="card">
+                        <img class="encontrarPontos" src="https://cdn-icons-png.flaticon.com/512/535/535239.png" alt="">
+                        <p>Encontre pontos<br>de coleta próximos</p>
+                    </div>
+                    <div class="card">
+                        <img class="ganharPontos" src="https://cdn-icons-png.flaticon.com/512/1828/1828640.png" alt="">
+                        <p>Ganhe pontos<br>no ranking</p>
+                    </div>
+                    <div class="card">
+                        <img class="contribuir" src="./images/6abb6cc35a67cb3e9fc4368a20ea0ffe79bb560f.png" alt="">
+                        <p>Contribua para<br>um futuro mais sustentável</p>
+                    </div>
+                    </div>
+
+                    <button id="btn">Registrar Descarte</button>
+                </main>
+            </div>
+        </section>
+        
+        <img class="planta" src="./images/3a3262a3c4d6d0add4e3da470331c8be1521249e1.png" alt="">
+        
+        <!-- ======== CARROSSEL PARA PONTOS DE COLETA (PUXANDO DO BANCO DE DADOS) ============= -->
+        <!-- SWIPER CSS -->
+        <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
+
+        <section id="pontos">
+            <div class="coleta-container">
+                <h2>Pontos de Coleta Disponível</h2>
+
+                <div class="search-filters">
+                    <div class="search-bar">
+                        <img class="icon-search" src="./images/00ce40ab84de2aa070c8c8b9e30fd76bdfdac06b.png" alt="">
+                        <input type="text" placeholder="Buscar por nome, endereço ou bairro...">
+                    </div>
+
+                    <div class="filter-buttons">
+                        <button class="filter active">Total</button>
+                        <button class="filter">Ativos</button>
+                        <button class="filter">Manutenção</button>
+                    </div>
+                </div>
+
+                <!-- CARROSSEL -->
+                <div class="swiper mySwiper">
+                    <div class="swiper-wrapper" id="cardsPonto"></div>
+
+                    <!-- Botões -->
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+
+                    <!-- Paginação -->
+                    <div class="swiper-pagination"></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SWIPER JS -->
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      
+        <section id="descarte">            
+            <div class="descartar-container">
+                <div class="descartar-img">
+                    <img src="./images/01159461e2e96c2cc335a8a7a3748e8ccd7be0dd.png" alt="Reciclagem">
+                </div>
+    
+                <!-- =============================================== -->
+
+                <div class="descartar-form">
+  <h2>Registrar Descarte</h2>
+  <hr>
+
+  <form id="form-descarte">
+    <div class="form-row">
+      <div class="form-group endereco">
+        <label for="pontoColeta">Ponto de Coleta</label>
+        <select id="pontoColetaSelect" required>
+          <option value="" disabled selected>Selecione um ponto de coleta</option>
+        </select>
+      </div>
+      <div class="form-group data">
+        <label for="data">Data</label>
+        <div class="input-with-icon">
+          <img src="./images/d7fdbf020781d852b1c6a1ae774950c891a9cd49.png" alt="Calendário">
+          <input type="date" id="data" required>
+        </div>
+      </div>
+    </div>
+
+    <div class="form-row">
+      <div class="form-group objeto">
+        <label for="objeto">Objeto descartado</label>
+        <input type="text" id="objeto" placeholder="Digite o objeto que será descartado" required>
+      </div>
+      <div class="form-group qtd">
+        <label for="quantidade">Quantidade</label>
+        <input type="number" id="quantidade" placeholder="01" min="1" value="1" required>
+      </div>
+    </div>
+
+    <button type="submit" class="btn-descartar">Descartar</button>
+  </form>
+
+  <div id="toast-container"></div>
+</div>
+
+            <!-- =============================================== -->
+
+        </section>
+
+        <section id="ranking">
+            <div class="ranking-container">
+                <div class="ranking-header">
+                    <h2>Ranking de usuários</h2>
+                    <img class="icon" src="./images/Energy Saving Bulb.svg" alt="">
+                </div>
+
+                <ul class="ranking-list" id="rankingList">
+                <!-- Itens serão inseridos via JS -->
+                </ul>
+            </div>
+        </section>
+
+    </section>
+
+    <button id="scrollTopBtn" class="scroll-top">
+        <img src="./images/Energy Saving Bulb.svg" alt="Topo" class="scroll-logo">
+    </button>
+
+    <footer id="footer">
+        <div class="footer-container">
+            <div class="footer-left">
+                © 2025 Recyclo Hub | Universidade São Judas Tadeu
+            </div>
+            <div class="footer-right">
+                <a href="#">Sobre</a> |
+                <a href="#">Contato</a> |
+                <a href="#">Política de Privacidade</a>
+            </div>
+        </div>
+    </footer>
+
+  <script src="home.js"></script>
+  <script src="modal.js"></script>
+  <script src="descarte.js"></script>
+  <script src="ranking.js"></script>
+  <script src="pontosColeta.js"></script>
+  
+  <!-- <script src="login.js"></script> -->
+  
+</body>
+</html>

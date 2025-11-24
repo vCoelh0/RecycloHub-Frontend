@@ -1,0 +1,65 @@
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem 2rem;
+  background-color: #fff; /* pode ajustar */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+/* Logo */
+.logo img {
+  height: 40px;
+  margin-right: 80vw;/* ajuste conforme necessário */
+}
+
+/* Menu */
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: -59vw;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  padding: 0 0.25rem;
+  padding-bottom: 5px;
+}
+
+.nav-menu span {
+  color: #999; /* cor do ponto separador */
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: black;
+    position: relative;
+    padding-bottom: 2px;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.nav-menu a.active::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 2px;
+    width: 100%;
+    background-color: #9EBE7E; /* Verde claro */
+    border-radius: 1px;
+}
+
+.user-icon {
+  height: 40px;
+  width: 40px;
+  margin-left: 15vw;
+}
+
+#open-login{
+    margin-left: -8.6vw;
+    margin-bottom: 0.45vw;
+}

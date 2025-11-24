@@ -1,0 +1,137 @@
+#descarte {
+  background: #f5f6f4;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60vh;
+}
+
+/* ===== CONTAINER PRINCIPAL ===== */
+.descartar-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 25px;
+  gap: 60px;
+}
+
+/* ===== IMAGEM ===== */
+.descartar-img img {
+  width: 280px;
+  margin-right: 5vw;
+  height: auto;
+}
+
+/* ===== FORMULÁRIO ===== */
+.descartar-form {
+  flex: 1;
+  margin-right: 15vw;
+}
+
+.descartar-form h2 {
+  color: #3e5140;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.descartar-form hr {
+  border: none;
+  border-top: 1px solid #cfd5cc;
+  margin-bottom: 30px;
+}
+
+.form-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 25px;
+}
+
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  color: #3e5140;
+  margin-bottom: 5px;
+}
+
+.form-group input{
+  background: #e6ede3;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  padding: 12px 55px;
+  font-size: 0.9rem;
+  color: #3e5140;
+  width: 100%;
+}
+
+#pontoColetaSelect {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  background-color:  #e6ede3;
+}
+
+
+.input-with-icon {
+    display: flex;
+    align-items: center;
+    background: #e6ede3;
+    border-radius: 10px;
+    padding: 0 12px;
+}
+
+.input-with-icon img {
+    width: 24px; /* tamanho do ícone */
+    margin-right: 10px; /* espaço entre ícone e input */
+}
+
+.input-with-icon input {
+    border: none;
+    outline: none;
+    background: transparent;
+    flex: 1;
+    padding: 12px 0; /* mantém a altura consistente */
+    font-size: 0.9rem;
+    color: #3e5140;
+}
+
+/* Mantém o mesmo tamanho dos inputs grandes */
+.form-row .form-group:first-child {
+  flex: 2;
+}
+
+.form-row .form-group:last-child {
+  flex: 0.8;
+}
+.form-group input::placeholder {
+  color: #a4b0a3;
+}
+
+/* ===== BOTÃO ===== */
+.btn-descartar {
+  background: #4b5d3d;
+  color: white;
+  border: none;
+  padding: 12px 40px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  display: block;
+  margin: 0 auto;
+  transition: background 0.3s;
+}
+
+.btn-descartar:hover {
+  background: #3d4f31;
+}
+

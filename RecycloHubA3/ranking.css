@@ -1,0 +1,81 @@
+#ranking {
+    background-color: #E7E7E7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+}
+
+.icon {
+    width: 5%;
+}
+
+/* ======= Container ======= */
+.ranking-container {
+    background-color: none;
+    border: 1px solid #303527;
+    border-radius: 12px;
+    padding: 32px 32px 60px 50px;
+    width: 800px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.ranking-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-bottom: 60px;
+}
+
+.ranking-header h2 {
+    font-size: 18px;
+    color: #333;
+    font-weight: 600;
+}
+
+.ranking-header .icon {
+    position: absolute;
+    right: 0;
+    font-size: 18px;
+    color: #12240c;
+}
+
+/* ======= Lista ======= */
+.ranking-list {
+    list-style: none; 
+}
+
+.ranking-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f6f7f5;
+    border-radius: 16px;
+    padding: 10px 16px;
+    margin-bottom: 8px;
+    transition: all 0.3s ease;
+    font-size: 14px;
+    color: #333;
+    border: 1px solid #303527;
+}
+
+.ranking-item span:first-child {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ranking-item .position {
+    font-weight: 600;
+    color: #666; 
+}
+
+.ranking-item.top1 {
+    background-color: #B9C8B1;
+    font-weight: 600;
+}
+
+.ranking-item:last-child {
+      margin-bottom: 0; 
+}

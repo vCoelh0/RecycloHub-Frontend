@@ -1,0 +1,198 @@
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fdfdfd;
+    overflow: hidden;
+    position: relative;
+    font-family: "Poppins", sans-serif;
+}
+
+.logo{
+    padding-left: 59vw;
+    padding-bottom: 2vw;
+}
+
+.formulario {
+    padding-bottom: 5vw;
+}
+
+    /* Efeito verde escuro no topo */
+#bck::before {
+    content: "";
+    position: absolute;
+    top: -250px;
+    left: -500px;
+    width: 1150px;
+    height: 520px;
+    background: radial-gradient(
+        circle at center,
+        #435e32d2 100%, 
+        transparent 90%
+    );
+    filter: blur(60px);
+    border-radius: 60%;
+    z-index: -1;
+}
+
+.bck::before {
+    content: "";
+    position: absolute;
+    top: -200px;
+    left: 650px;
+    width: 600px;
+    height: 320px;
+    background: radial-gradient(
+        circle at center,
+        rgba(8, 55, 8, 0.6) 100%, 
+        transparent 80%
+    );
+    filter: blur(120px);
+    z-index: -1;
+}
+
+.container {
+    background: transparent;
+    border-radius: 12px;
+    padding: 40px;
+    width: 600px;
+    text-align: center;
+}
+
+ h2 {
+    margin-bottom: 30px;
+    font-size: 29px;
+    font-weight: 600;
+    color: #222;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+label {
+    font-weight: 500;
+    font-style: normal;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input {
+    padding: 10px 10px 10px 35px; /* espaço maior à esquerda p/ ícone */
+    border: none;
+    border-radius: 10px;
+    background: #C5D7BC4D; /* esse verdinho claro */
+    font-size: 13px;
+    font-weight: 500;
+    font-family: "Poppins", sans-serif;
+    color: #818181;
+}
+
+input:focus {
+    border-color: #567d56;
+}
+
+.btn {
+    grid-column: span 2;
+    padding: 7px;
+    margin-top: 10px;
+    width: 60%;
+    margin-left: 8vw;
+    font-weight: 700;
+    font-weight: bold;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    background: #5F705B;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+    font-family: "Poppins", sans-serif;
+}
+
+.btn:hover {
+    background: #466746;
+}
+
+.login-link {
+    margin-top: 15px;
+    font-size: 12px;
+    font-weight: 500;
+    font-style: normal;
+}
+
+.login-link a {
+    color: #7B9669;
+    text-decoration: none; 
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+.input-icon {
+  position: relative;
+}
+
+.input-icon .icon {
+  position: absolute;
+  left: 10px;
+  top: 68%;
+  transform: translateY(-50%);
+  color: #666;
+  font-size: 16px;
+}
+
+.input-icon input {
+  width: 81.5%;
+  padding: 10px 10px 10px 45px; /* espaço p/ o ícone */
+  border: none;
+}
+
+.input-sobrenome input {
+    padding-left: 52px;
+    width: 79%;
+}
+
+.input-email input {
+    padding-left: 49px;
+    width: 79%;
+}
+
+.input-calendario input {
+    padding-left: 53px;
+    width: 79%;
+}
+
+.input-calendario img {
+    padding-left: 7px;
+    padding-top: 3px;
+}
+
+.input-senha input {
+    padding-left: 51px;
+    width: 79%;
+}
+
+.input-conSenha input {
+    padding-left: 53px;
+    width: 79%;
+}
+
+
